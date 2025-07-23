@@ -7,21 +7,182 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Abhishek Gautam</h1>
-    <p>Intel Experience | Resume Portfolio</p>
-  </header>
+  <div class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Abhishek Gautam</h1>
+      <p class="hero-subtitle">AI Developer | Intel Experience</p>
+      <a href="#contact" class="hero-btn">Contact Me</a>
+    </div>
+  </div>
   <main>
-    <section class="resume-section">
+    <section class="glass-card tilt" id="summary">
+      <h2>About Me</h2>
+      <p>AI Developer with a robust background in computer engineering and software development, specializing in applied machine learning to drive impactful solutions. Skilled in analyzing complex data sets, designing strategic AI models, and effectively communicating insights into cross-functional teams. Committed to solving real-world business challenges through innovative data-driven approaches.</p>
+    </section>
+    <section class="glass-card tilt" id="skills">
+      <h2>Skills</h2>
+      <div class="skills-badges">
+        <span class="badge tilt">Generative AI</span>
+        <span class="badge tilt">Regression</span>
+        <span class="badge tilt">Classification</span>
+        <span class="badge tilt">Forecasting</span>
+        <span class="badge tilt">Clustering</span>
+        <span class="badge tilt">Image Processing</span>
+        <span class="badge tilt">Python</span>
+        <span class="badge tilt">Pandas</span>
+        <span class="badge tilt">NumPy</span>
+        <span class="badge tilt">Scikit-learn</span>
+        <span class="badge tilt">PySpark</span>
+        <span class="badge tilt">SQL</span>
+        <span class="badge tilt">Scipy</span>
+        <span class="badge tilt">Matplotlib</span>
+        <span class="badge tilt">Seaborn</span>
+        <span class="badge tilt">Jenkins</span>
+        <span class="badge tilt">Azure</span>
+        <span class="badge tilt">Nginx</span>
+        <span class="badge tilt">FastAPI</span>
+        <span class="badge tilt">Flask</span>
+      </div>
+    </section>
+    <section class="glass-card tilt" id="experience">
+      <h2>Experience</h2>
+      <div class="exp-cards">
+        <div class="exp-card tilt">
+          <h3>Intel – Software Development Engineer</h3>
+          <span class="exp-date">Aug 2023 - Present</span>
+          <ul>
+            <li>Built LLM-based Agentic AI solution for pre-silicon validation and modeling with real-time data analysis.</li>
+            <li>Built RAG-based chatbot with 95%+ consistent retrieval score, improving coding productivity by 50%.</li>
+            <li>Automated latest binary integration using Jenkins and ML models, reducing 80% of integration time.</li>
+          </ul>
+        </div>
+        <div class="exp-card tilt">
+          <h3>Intel – Intern</h3>
+          <span class="exp-date">July 2022 – July 2023</span>
+          <ul>
+            <li>Built automation workflows for integration using Jenkins.</li>
+            <li>Built predictive analysis for data loads on integration servers.</li>
+          </ul>
+        </div>
+        <div class="exp-card tilt">
+          <h3>Webworks25 – Founder CEO</h3>
+          <span class="exp-date">Feb 2020 – June 2022</span>
+          <ul>
+            <li>Created ERP services for medium to low scale businesses.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="glass-card tilt" id="projects">
+      <h2>Projects</h2>
+      <div class="project-cards">
+        <div class="project-card tilt">
+          <h3>Cloud-based Dynamic Machine Learning Model Training Platform</h3>
+          <p>Using TensorFlow, SK-learn, and Flask. Built for MTech.</p>
+        </div>
+        <div class="project-card tilt">
+          <h3>Bitcoin Price Prediction based on News Sentiment Analysis</h3>
+          <p>Using TensorFlow and Keras.</p>
+        </div>
+      </div>
+    </section>
+    <section class="glass-card tilt" id="research">
+      <h2>Research</h2>
+      <p><strong>DeepFake video analysis:</strong> Findings contribute to AI-driven media authentication and security, providing valuable insights and tools for combating misinformation and digital deception. Published research on Deepfake image and video Identification using CNN in Springer Paper.</p>
+    </section>
+    <section class="glass-card tilt" id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <a href="mailto:abhishekkagautam@gmail.com" class="contact-link"><span class="icon">📧</span> abhishekkagautam@gmail.com</a><br>
+        <a href="tel:+917237864986" class="contact-link"><span class="icon">📞</span> +91 7237864986</a><br>
+        <a href="https://www.linkedin.com/in/abhishekkagautam/" target="_blank" class="contact-link"><span class="icon">🔗</span> LinkedIn</a>
+      </div>
+    </section>
+    <section class="glass-card" id="resume">
       <h2>My Resume</h2>
       <div class="pdf-viewer">
-        <iframe src="Abhishek_Gautam.pdf" width="100%" height="600px" style="border:1px solid #ccc; border-radius:8px;" title="Abhishek"></iframe>
-        <p>If the PDF does not display, <a href="Abhishek_Gautam.pdf" download>download it here</a>.</p>
+        <iframe src="Abhishek_Gautam_Intel_exp_resume.pdf" width="100%" height="600px" style="border:1px solid #ccc; border-radius:8px;" title="Resume PDF"></iframe>
+        <p>If the PDF does not display, <a href="Abhishek_Gautam_Intel_exp_resume.pdf" download>download it here</a>.</p>
       </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Abhishek Gautam. All rights reserved.</p>
+    <p>&copy; 2024 Abhishek Gautam. All rights reserved.</p>
   </footer>
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('.glass-card');
+    const revealSection = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(revealSection, { threshold: 0.15 });
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Navbar active link on scroll
+    const navLinks = document.querySelectorAll('.navbar a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+          current = '#' + section.id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger-menu');
+    const navbarLinks = document.getElementById('navbar-links');
+    hamburger.addEventListener('click', () => {
+      navbarLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', navbarLinks.classList.contains('open'));
+    });
+    hamburger.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navbarLinks.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', navbarLinks.classList.contains('open'));
+      }
+    });
+    // Close menu on link click (mobile)
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 600) {
+          navbarLinks.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // 3D tilt effect for .tilt elements
+    const tiltElements = document.querySelectorAll('.tilt');
+    tiltElements.forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 8;
+        el.style.transform = `perspective(700px) rotateX(${-rotateX}deg) scale(1.04)`;
+        el.style.zIndex = 3;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        el.style.zIndex = '';
+      });
+    });
+  </script>
 </body>
 </html> 
